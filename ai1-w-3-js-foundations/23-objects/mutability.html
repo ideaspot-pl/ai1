@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mutability</title>
+
+    <script>
+        let fruit1 = {name: "apple"};
+        let fruit2 = fruit1;
+        let fruit3 = {name: "apple"};
+
+        console.log(fruit1 == fruit2, fruit1 == fruit3, fruit2 == fruit3);
+        //--> true false false
+        console.log(fruit1.name, fruit2.name, fruit3.name);
+        //--> apple apple apple
+        fruit1.name = "pear";
+        console.log(fruit1.name, fruit2.name, fruit3.name);
+        //--> pear pear apple
+    </script>
+
+</head>
+<body>
+</body>
+</html>

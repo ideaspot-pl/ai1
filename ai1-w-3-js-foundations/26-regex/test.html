@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex: TEST()</title>
+
+    <script>
+        console.log(/abc/.test("abcde"));
+        //--> true
+        console.log(/abc/.test("abxyzde"));
+        //--> false
+
+        let dateTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
+        console.log(dateTime.test("01-01-2000 00:00"));
+        //--> true
+        console.log(dateTime.test("01-JAN-2000 00:00"));
+        //--> false
+    </script>
+
+</head>
+<body>
+</body>
+</html>

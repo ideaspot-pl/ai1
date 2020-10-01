@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Optional parameters</title>
+
+    <script>
+        function power1(base, exponent) {
+            if (exponent == undefined) {
+                exponent = 2;
+            }
+
+            let result = 1;
+            for (let i = 0; i < exponent; i++) {
+                result *= base;
+            }
+            return result;
+        }
+        console.log(power1(2));
+        //--> 4
+        console.log(power1(2,3));
+        //--> 8
+
+
+        function power2(base, exponent = 2) {
+            let result = 1;
+            for (let i = 0; i < exponent; i++) {
+                result *= base;
+            }
+            return result;
+        }
+        console.log(power1(2));
+        //--> 4
+        console.log(power1(2,3));
+        //--> 8
+    </script>
+
+</head>
+<body>
+</body>
+</html>

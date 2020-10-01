@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rowspan and Colspan</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="2">wide</td>
+        <!-- missing cell -->
+        <td>normal 1</td>
+    </tr>
+    <tr>
+        <td>normal 2</td>
+        <td>normal 3</td>
+        <td>normal 4</td>
+    </tr>
+    <tr>
+        <td rowspan="2">high</td>
+        <td>normal 5</td>
+        <td>normal 6</td>
+    </tr>
+    <tr>
+        <!-- missing cell -->
+        <td>normal 7</td>
+        <td>normal 8</td>
+    </tr>
+</table>
+</body>
+</html>

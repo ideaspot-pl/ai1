@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditions</title>
+
+    <script>
+        let a = 10, b = 20;
+
+        if (a > b) {
+            console.log("A is greater than B");
+        }
+        //--> no output
+
+        if (a > b) {
+            console.log("A is greater than B");
+        } else {
+            console.log("A is lower than or equal to B");
+        }
+        //--> A is lower than or equal to B
+
+        if (a > b) {
+            console.log("A is greater than B");
+        } else if (a < b) {
+            console.log("A is lower than B");
+        } else {
+            console.log("A is equal to B");
+        }
+        //--> A is lower than B
+
+        switch (a) {
+            case 10:
+                console.log("A is 10");
+                break;
+            case 20:
+                console.log("A is 20");
+                break;
+            default:
+                console.log("A has other value");
+                break;
+        }
+        //--> A is 10
+    </script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beware block scopes!</title>
+
+    <script>
+        var varThing = 1;
+        let letThing = 1;
+        {
+            var varThing = 2;
+            let letThing = 2;
+        }
+        console.log(varThing, letThing);
+        //--> 2 1
+    </script>
+
+</head>
+<body>
+</body>
+</html>

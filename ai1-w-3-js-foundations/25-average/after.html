@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge: Average</title>
+
+    <script>
+        function average(...values) {
+            let sum = 0;
+            let elementsCount = 0;
+            for (let value of values) {
+                sum += value;
+                elementsCount += 1;
+            }
+            return sum/elementsCount;
+        }
+
+        console.log(average(-10, 0, 10, 20));
+        //--> 5
+
+        let values = [5, 10, 15];
+        console.log(average(...values));
+        //--> 10
+    </script>
+
+</head>
+<body>
+</body>
+</html>

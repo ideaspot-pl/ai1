@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type coercion</title>
+
+    <script>
+        console.log(5 * null);
+        //--> 0
+        console.log("5" - 1);
+        //--> 4
+        console.log("5" + 1);
+        //--> 51
+        console.log(5 + "1");
+        //--> 51
+        console.log(5 + parseInt("1"));
+        //--> 6
+        console.log("five" * 5);
+        //--> NaN
+        console.log(false == 0);
+        //--> true
+        console.log(false === 0);
+        //--> false
+        console.log(true == 1);
+        //--> true
+        console.log(true === 1);
+        //--> false
+    </script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div Columns Example</title>
+    <style type="text/css">
+        div {
+            float: left;
+            width: 100%;
+        }
+        .header {
+            background-color: red;
+        }
+        .sidebar {
+            background-color: green;
+        }
+        .main-content {
+            background-color: blue;
+        }
+
+        @media (min-width: 420px) {
+            .header {
+                width: 100%;
+            }
+            .sidebar {
+                width: 30%;
+            }
+            .main-content {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>This is header.</h1>
+</div>
+<div class="sidebar">
+    <p>This is sidebar.</p>
+</div>
+<div class="main-content">
+    <p>This is main content.</p>
+</div>
+</body>
+</html>

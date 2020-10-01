@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Floating point arithmetic issues</title>
+
+    <script>
+        let i = 0;
+        let breaker = 0;
+        while (i !== 0.6) {
+            console.log(i);
+            i += 0.2;
+
+            if (breaker++ > 10) break; // breaks loop if sth goes wrong
+        }
+    </script>
+
+</head>
+<body>
+</body>
+</html>

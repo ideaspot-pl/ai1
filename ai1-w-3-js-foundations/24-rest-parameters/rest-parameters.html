@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest parameters</title>
+
+    <script>
+        function max(...values) {
+            let currentMax = -Infinity;
+            for (let value of values) {
+                if (value > currentMax) {
+                    currentMax = value;
+                }
+            }
+            return currentMax;
+        }
+
+        console.log(max(-10, 0, 10, 20));
+        //--> 20
+
+        let values = [5, 10, 15];
+        console.log(max(...values));
+        //--> 15
+    </script>
+
+</head>
+<body>
+</body>
+</html>

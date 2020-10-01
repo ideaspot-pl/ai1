@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete and in operators</title>
+
+    <script>
+        let apple = {
+            name: "apple",
+            price: 3.99,
+            "discount price": 2.99,
+        };
+
+        console.log("price" in apple);
+        //--> true
+        delete apple.price;
+        console.log("price" in apple);
+        //--> false
+        console.log(apple.price);
+        //--> undefined
+
+
+        console.log("discount price" in apple);
+        //--> true
+        delete apple["discount price"];
+        console.log("discount price" in apple);
+        //--> false
+    </script>
+
+</head>
+<body>
+</body>
+</html>

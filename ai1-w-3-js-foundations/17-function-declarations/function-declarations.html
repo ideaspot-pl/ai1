@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternative function declarations</title>
+
+    <script>
+        const f1 = function(param) {
+            console.log(`f1 ${param}`);
+        }
+        f1(1);
+        //--> f1 1
+
+        function f2(param) {
+            console.log(`f2 ${param}`);
+        }
+        f2(2);
+        //--> f2 2
+
+        const f3 = (param) => {
+            console.log(`f3 ${param}`);
+        };
+        f3(3);
+        //--> f3 3
+    </script>
+
+</head>
+<body>
+</body>
+</html>

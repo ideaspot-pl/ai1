@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Default Values</title>
+
+    <script>
+        let user = null;
+        console.log(user || "Anonymous");
+        //--> Anonymous
+        console.log(user && "Logged-in user");
+        //--> null
+
+        user = "Artur";
+        console.log(user || "Anonymous");
+        //--> Artur
+        console.log(user && "Logged-in user");
+        //--> Logged-in user
+    </script>
+
+</head>
+<body>
+</body>
+</html>

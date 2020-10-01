@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables scope</title>
+
+    <script>
+        let x = 'global';
+
+        const f1 = function() {
+            let x = 'local 1';
+        }
+        f1();
+        console.log(x);
+        //--> global
+
+        const f2 = function() {
+            x = 'local 2';
+        }
+        f2();
+        console.log(x);
+        //--> local 2
+    </script>
+
+</head>
+<body>
+</body>
+</html>

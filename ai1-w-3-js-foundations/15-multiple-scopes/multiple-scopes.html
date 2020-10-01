@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple levels of scope</title>
+
+    <script>
+        const box = function(width, height) {
+            let result = "";
+
+            const lid = function(width) {
+                let result = "";
+                for (let i = 0; i < width; i++) {
+                    result += '#';
+                }
+                result += "\n";
+                return result;
+            }
+
+            const sides = function (width, height) {
+                let result = "";
+                for (let h = 0; h < height - 2; h++) {
+                    for (let w = 1; w <= width; w++) {
+                        result += (w == 1 || w == width) ? '#' : '.';
+                    }
+                    result += "\n";
+                }
+                return result;
+            }
+
+            result += lid(width);
+            result += sides(width, height);
+            result += lid(width);
+            return result;
+        }
+        console.log(box(8, 6));
+    </script>
+
+</head>
+<body>
+</body>
+</html>

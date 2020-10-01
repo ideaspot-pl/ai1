@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ternary Operator</title>
+
+    <script>
+        console.log(true ? "a" : "b");
+        //--> a
+        console.log(false ? "a" : "b");
+        //--> b
+
+        let isMember = false;
+        console.log("The fee is " + (isMember ? 0 : 12) + " dollars");
+        //--> The fee is 12 dollars
+        isMember = true;
+        console.log("The fee is " + (isMember ? 0 : 12) + " dollars");
+        //--> The fee is 0 dollars
+
+        // no brackets
+        console.log("The fee is " + isMember ? 0 : 12 + " dollars");
+        //--> 0
+    </script>
+
+</head>
+<body>
+</body>
+</html>

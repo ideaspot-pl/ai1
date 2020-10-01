@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternative function declarations</title>
+
+    <script>
+        function power(base, exponent = 0) {
+            if (exponent === 0) {
+                return 1;
+            } else {
+                return base * power(base, exponent - 1);
+            }
+        }
+
+        console.log(power(2, 0));
+        //--> 1
+        console.log(power(2, 3));
+        //--> 8
+    </script>
+
+</head>
+<body>
+</body>
+</html>
