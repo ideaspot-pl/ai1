@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Objects</title>
+
+    <script>
+        let student = {
+            firstName: "Artur",
+            lastName: "Karczmarczyk",
+            "index number": "3346",
+            printStudentInfo: function() {
+                console.log("3346: Karczmarczyk Artur");
+            }
+        };
+        console.log(student.firstName, student.lastName, student["index number"]);
+        //--> Artur Karczmarczyk 3346
+
+        console.log("firstName" in student);
+        //--> true
+
+        console.log("middleName" in student);
+        //--> false
+
+        student.middleName = "no";
+        console.log("middleName" in student);
+        //--> true
+
+        student.printStudentInfo();
+        //--> 3346: Karczmarczyk Artur
+    </script>
+
+</head>
+<body>
+</body>
+</html>

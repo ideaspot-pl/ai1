@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+
+    <script>
+        class Animal {
+            constructor(sound) {
+                this.sound = sound;
+            }
+            makeSound(howMany = 1) {
+                console.log(this.sound.repeat(howMany));
+            }
+        }
+        let dog = new Animal("woof...");
+        console.log(String(dog));
+        //--> [object Object]
+
+        Animal.prototype.toString = function () {
+            return `An animal object with sound "${this.sound}"`;
+        }
+        console.log(String(dog));
+        //--> An animal object with sound "woof..."
+    </script>
+
+</head>
+<body>
+</body>
+</html>

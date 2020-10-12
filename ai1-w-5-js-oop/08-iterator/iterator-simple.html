@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterator</title>
+
+    <script>
+        let abcIterator = "ABC"[Symbol.iterator]();
+        // method called Symbol.iterator from string prototype
+
+        console.log(abcIterator.next());
+        //--> {done: false, value: "A"}
+
+        console.log(abcIterator.next());
+        //--> {done: false, value: "B"}
+
+        console.log(abcIterator.next());
+        //--> {done: false, value: "C"}
+
+        console.log(abcIterator.next());
+        //--> {done: true, value: undefined}
+    </script>
+
+</head>
+<body>
+</body>
+</html>

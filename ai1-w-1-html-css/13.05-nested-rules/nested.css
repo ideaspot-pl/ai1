@@ -1,0 +1,12 @@
+p {
+  color: red;
+}
+p span.important {
+  font-weight: bold;
+}
+a {
+  color: pink;
+}
+a:hover {
+  color: green;
+}

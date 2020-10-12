@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+
+    <script>
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            get name() {
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+
+        class Student extends Person {
+            constructor(firstName, lastName, indexNumber) {
+                super(firstName, lastName);
+                this.indexNumber = indexNumber;
+            }
+            get studentInfo() {
+                return this.indexNumber + ': ' + super.name;
+            }
+        }
+
+        let student = new Student("Artur", "Karczmarczyk", "3346");
+
+        console.log(student.name);
+        //--> Artur Karczmarczyk
+        console.log(student.studentInfo);
+        //--> 3346: Artur Karczmarczyk
+
+        console.log(student instanceof Student);
+        //--> true
+        console.log(student instanceof Person);
+        //--> true
+    </script>
+
+</head>
+<body>
+</body>
+</html>

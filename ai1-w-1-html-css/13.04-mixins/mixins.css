@@ -1,0 +1,12 @@
+.border-dotted {
+  border-top: 3px dotted red;
+  border-bottom: 3px dotted red;
+  border-left: 3px dotted green;
+  border-right: 3px dotted green;
+}
+div.dotted {
+  border-top: 3px dotted red;
+  border-bottom: 3px dotted red;
+  border-left: 3px dotted green;
+  border-right: 3px dotted green;
+}

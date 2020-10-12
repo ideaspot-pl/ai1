@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating objects</title>
+
+    <script>
+        let animalPrototype = {
+            sound: "...",
+            makeSound: function(howMany = 1) {
+                console.log(this.sound.repeat(howMany));
+            }
+        };
+        let dog = Object.create(animalPrototype);
+        dog.sound = "woof...";
+        dog.makeSound(3)
+        //--> woof...woof...woof...
+
+        let bird = Object.create(animalPrototype)
+        bird.sound = "chirp...";
+        bird.makeSound(3)
+        //--> chirp...chirp...chirp...
+
+        let quiet = Object.create(animalPrototype);
+        quiet.makeSound();
+        //--> ...
+    </script>
+
+</head>
+<body>
+</body>
+</html>

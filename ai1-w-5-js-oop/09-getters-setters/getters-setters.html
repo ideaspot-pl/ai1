@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getters and Setters</title>
+
+    <script>
+        class Student {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            get fullName() {
+                return this.firstName + ' ' + this.lastName;
+            }
+            set fullName(fullName) {
+                let nameParts = fullName.split(' ');
+                this.firstName = nameParts[0];
+                this.lastName = nameParts[1];
+            }
+        }
+
+        let student = new Student("Artur", "Karczmarczyk");
+        console.log(student.firstName, student.lastName);
+        //--> Artur Karczmarczyk
+        console.log(student.fullName);
+        //--> Artur Karczmarczyk
+
+        student.fullName = "Robin Hood";
+        console.log(student.firstName, student.lastName, student.fullName);
+        //--> Robin Hood Robin Hood
+    </script>
+
+</head>
+<body>
+</body>
+</html>

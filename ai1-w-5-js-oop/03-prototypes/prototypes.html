@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototypes</title>
+
+    <script>
+        console.log(Object.getPrototypeOf({})
+            === Object.prototype);
+        //--> true
+
+        console.log(Object.getPrototypeOf([])
+            === Array.prototype);
+        //--> true
+
+        console.log(Object.getPrototypeOf(() => {return 0;})
+            === Function.prototype);
+        //--> true
+
+        console.log(Object.getPrototypeOf(function () {return 0;})
+            === Function.prototype);
+        //--> true
+    </script>
+
+</head>
+<body>
+</body>
+</html>
