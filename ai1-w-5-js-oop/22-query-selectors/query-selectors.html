@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query Selectors</title>
+</head>
+<body>
+    <ol id="nodes-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>
+            Item 3
+            <ol>
+                <li>Item 3.1</li>
+                <li>Item 3.2</li>
+                <li>Item 3.3</li>
+            </ol>
+        </li>
+    </ol>
+
+    <script>
+        let items = document.querySelectorAll("ol li ol li");
+        console.log(items);
+        //--> NodeList(3) [li, li, li]
+        console.log(Array.from(items));
+        //--> [li, li, li]
+
+        let item = document.querySelector("ol > li:first-child");
+        console.log(item.innerText);
+        //--> Item 1
+    </script>
+</body>
+</html>

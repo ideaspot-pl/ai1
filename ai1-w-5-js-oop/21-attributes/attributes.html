@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes</title>
+</head>
+<body>
+    <div>
+        <a href="attributes.html"
+           id="here"
+           class="class1 class2"
+           title="This is a title"
+           style="color: red;">
+            <strong>Click!</strong>
+        </a>
+    </div>
+
+    <script>
+        let link = document.getElementById("here");
+
+        console.log(link.id);
+        //--> here
+
+        console.log(link.className);
+        //--> class1 class2
+
+        link.className = "class-replaced";
+        console.log(link.className);
+        //--> class-replaced
+
+        console.log(link.title);
+        //--> This is a title
+
+        console.log(link.style);
+        //--> [ CSSStyleDeclaration ]
+
+        console.log(link.style.color);
+        //--> red
+    </script>
+</body>
+</html>

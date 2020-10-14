@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 40px;
+            border: 1px solid black;
+            position: relative;
+        }
+        #container:before {
+            content: "";
+            display: block;
+            position: relative;
+            left: 150px;
+            width: 0;
+            height: 40px;
+            border: 1px solid black;
+        }
+        #point {
+            width: 15px;
+            height: 15px;
+            border-radius: 8px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="point" style="left: 10px; top: 10px;"></div>
+</div>
+
+<script>
+    let point = document.getElementById("point");
+    let angle = 0;
+
+    function animate(time, lastTime) {
+        let delta = time - lastTime;
+        if (lastTime) {
+            angle += delta * 0.001;
+        }
+        point.style.left = (Math.sin(angle) * 140 + 145) + 'px';
+
+        requestAnimationFrame(newTime => animate(newTime, time));
+    }
+    requestAnimationFrame(newTime => animate(newTime, null));
+</script>
+</body>
+</html>

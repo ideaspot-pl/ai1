@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use Strict</title>
+
+    <script>
+        function fib(ordinal) {
+            if (ordinal < 0) {
+                throw new Error(`Integer >= 0 needs to be provided, ${ordinal} given.`);
+            }
+            switch (ordinal) {
+                case 0:
+                    return 0;
+                case 1:
+                    return 1;
+                default:
+                    return this.fib(ordinal-1) + this.fib(ordinal-2);
+            }
+        }
+        console.log(fib(-1));
+        //--> Uncaught Error: Integer >= 0 needs to be provided, -1 given.
+    </script>
+
+</head>
+<body>
+</body>
+</html>

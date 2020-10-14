@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finally</title>
+
+    <script>
+        function testException() {
+            let rand = Math.random();
+            if (rand < 0.5) {
+                throw new Error("Dummy error.");
+            }
+            return rand;
+        }
+
+        let value;
+        try {
+            value = testException();
+        } catch (error) {
+            value = -1;
+        } finally {
+            console.log("Finally: " + value);
+        }
+
+        //--> Finally: 0.5168
+        //--> Finally: -1
+        //--> Finally: 0.9892
+    </script>
+
+</head>
+<body>
+</body>
+</html>

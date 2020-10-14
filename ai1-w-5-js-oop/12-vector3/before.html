@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vector3</title>
+
+    <script>
+        class Vector3 {
+            constructor(x,y,z) {
+                // ...
+            }
+            plus(b) {
+                // ...
+            }
+            minus(b) {
+                // ...
+            }
+            length() {
+                // ...
+            }
+            normalize() {
+                // ...
+            }
+            toString() {
+                return `Vector3(..., ..., ...)`;
+            }
+        }
+
+        let a = new Vector3(0,0,0);
+        let b = new Vector3(1,2,3);
+        console.log(a.plus(b));
+        console.log(a.minus(b));
+        let normalized = b.normalize();
+        console.log(normalized, normalized.length());
+    </script>
+
+</head>
+<body>
+</body>
+</html>

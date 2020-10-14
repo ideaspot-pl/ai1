@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unhandled Exceptions</title>
+
+    <script>
+        function testException() {
+            let rand = Math.random();
+            if (rand < 0.5) {
+                throw new Error("Dummy error.");
+            }
+            return rand;
+        }
+
+        let value = testException();
+        console.log(value);
+        //--> 0.6709
+        //--> 0.8917
+        //--> Uncaught Error: Dummmy error. at ... ... ...
+    </script>
+
+</head>
+<body>
+</body>
+</html>

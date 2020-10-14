@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifying Styles</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+        }
+        #point {
+            width: 15px;
+            height: 15px;
+            border-radius: 8px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="point" style="left: 10px; top: 10px;"></div>
+    </div>
+    <button onclick="goLeft()">&lt;</button>
+    <button onclick="goRight()">&gt;</button>
+    <button onclick="goUp()">^</button>
+    <button onclick="goDown()">v</button>
+    <button onclick="changeColor()">Color</button>
+
+    <script>
+        let point = document.getElementById("point");
+        function goLeft() {
+            let left = parseInt(point.style.left);
+            left = left > 10 ? left - 10 : 0;
+            point.style.left = left + 'px';
+        }
+        function goRight() {
+            let left = parseInt(point.style.left);
+            left = left < 300 ? left + 10 : 300;
+            point.style.left = left + 'px';
+        }
+        function goUp() {
+            let top = parseInt(point.style.top);
+            top = top > 10 ? top - 10 : 0;
+            point.style.top = top + 'px';
+        }
+        function goDown() {
+            let top = parseInt(point.style.top);
+            top = top < 300 ? top + 10 : 300;
+            point.style.top = top + 'px';
+        }
+        function changeColor() {
+            let colors = ['red', 'green', 'blue', 'silver', 'pink'];
+            let newColor = colors[Math.floor(Math.random() * colors.length)];
+            point.style['background-color'] = newColor;
+            // point.style.backgroundColor = newColor;
+        }
+    </script>
+</body>
+</html>

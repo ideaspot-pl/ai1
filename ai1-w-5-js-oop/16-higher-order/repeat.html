@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher-Order Functions: Repeat</title>
+
+    <script>
+        function repeat(times, action) {
+            for (let i = 0; i < times; i++) {
+                action(i);
+            }
+        }
+        repeat(3, console.log);
+        //--> 0
+        //--> 1
+        //--> 2
+    </script>
+
+</head>
+<body>
+</body>
+</html>

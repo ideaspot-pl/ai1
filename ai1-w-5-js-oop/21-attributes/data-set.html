@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset</title>
+    <style>
+        .highlighted {
+            color: #ee15af;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li data-priority="low">Item 1</li>
+        <li data-priority="low">Item 2</li>
+        <li data-priority="high">Important Item 3</li>
+        <li data-priority="high">Important Item 4</li>
+        <li data-priority="low">Item 5</li>
+    </ul>
+    <button onclick="togglePriority('high')">Toggle High</button>
+    <button onclick="togglePriority('low')">Toggle Low</button>
+
+    <script>
+        function togglePriority(priorityLevel) {
+            let items = document.getElementsByTagName("li");
+            for (let item of items) {
+                if (item.dataset.priority === priorityLevel) {
+                    item.className = item.className ? "" : "highlighted";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

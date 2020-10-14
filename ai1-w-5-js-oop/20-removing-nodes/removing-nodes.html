@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Removing Nodes</title>
+</head>
+<body>
+    <ul id="nodes-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button onclick="deleteFirst()">Delete First</button>
+
+    <script>
+        function deleteFirst() {
+            let elements = document.getElementsByTagName("li");
+            if (! elements.length) {
+                return;
+            }
+
+            let element = elements[0];
+            element.parentElement.removeChild(element);
+        }
+    </script>
+</body>
+</html>

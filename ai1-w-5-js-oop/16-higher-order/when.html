@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher-Order Functions: When</title>
+
+    <script>
+        function when(condition, action) {
+            if (condition) {
+                action();
+            }
+        }
+        when(true, () => {
+            console.log("True!");
+        });
+        //--> True!
+
+        when(false, () => {
+            console.log("False!");
+        });
+        //-->
+    </script>
+
+</head>
+<body>
+</body>
+</html>

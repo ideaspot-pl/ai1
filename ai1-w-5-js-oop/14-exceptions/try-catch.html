@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try-Catch</title>
+
+    <script>
+        function testException() {
+            let rand = Math.random();
+            if (rand < 0.5) {
+                throw new Error("Dummy error.");
+            }
+            return rand;
+        }
+
+        try {
+            let value = testException();
+            console.log(value);
+        } catch (error) {
+            console.log("Something went wrong: " + error);
+        }
+
+        //--> 0.5143
+        //--> 0.7786
+        //--> Something went wrong: Error: Dummy error.
+    </script>
+
+</head>
+<body>
+</body>
+</html>

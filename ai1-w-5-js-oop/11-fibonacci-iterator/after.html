@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Iterator</title>
+
+    <script>
+        class FibonacciSequence {
+            constructor(numElements) {
+                this.numElements = numElements;
+            }
+            fib(ordinal) {
+                switch (ordinal) {
+                    case 0:
+                        return 0;
+                    case 1:
+                        return 1;
+                    default:
+                        return this.fib(ordinal-1) + this.fib(ordinal-2);
+                }
+            }
+        }
+
+        class FibonacciIterator {
+            constructor(sequence) {
+                this.sequence = sequence;
+                this.ordinal = 0;
+            }
+
+            next() {
+                this.ordinal++;
+                if (this.ordinal > this.sequence.numElements) {
+                    return {value: undefined, done: true}
+                }
+
+                return {value: this.sequence.fib(this.ordinal), done: false}
+            }
+        }
+        FibonacciSequence.prototype[Symbol.iterator] = function() {
+            return new FibonacciIterator(this);
+        };
+
+        let fibonacci10 = new FibonacciSequence(10);
+        for (let item of fibonacci10) {
+            console.log(item);
+        }
+        console.log(Array.from(fibonacci10));
+    </script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vector3</title>
+
+    <script>
+        class Vector3 {
+            constructor(x,y,z) {
+                this.x = x;
+                this.y = y;
+                this.z = z;
+            }
+            plus(b) {
+                return new this.constructor(this.x + b.x, this.y + b.y, this.z + b.z);
+            }
+            minus(b) {
+                return new this.constructor(this.x - b.x, this.y - b.y, this.z - b.z);
+            }
+            length() {
+                let length = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2) + Math.pow(this.z, 2));
+                return length;
+            }
+            normalize() {
+                let length = this.length();
+                let normalized = new Vector3(this.x / length, this.y / length, this.z / length);
+                return normalized;
+            }
+            toString() {
+                return `Vector3(${this.x}, ${this.y}, ${this.z})`;
+            }
+        }
+
+        let a = new Vector3(0,0,0);
+        let b = new Vector3(1,2,3);
+        console.log(a.plus(b));
+        console.log(a.minus(b));
+        let normalized = b.normalize();
+        console.log(normalized, normalized.length());
+    </script>
+
+</head>
+<body>
+</body>
+</html>

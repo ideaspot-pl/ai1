@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecting Nodes</title>
+</head>
+<body>
+    <div class="odd" id="first">DIV 1</div>
+    <div class="even" id="second">DIV 2</div>
+    <div class="odd">DIV 3</div>
+    <div class="even">DIV 4</div>
+    <div>DIV 5</div>
+
+    <script>
+        let divs = document.getElementsByTagName("div");
+        console.log(divs[0].innerText);
+        //--> DIV 1
+
+        let div2 = document.getElementById("second");
+        console.log(div2.innerText);
+        //--> DIV 2
+
+        let even = document.getElementsByClassName("even");
+        for (let item of even) {
+            console.log(item.innerText);
+        }
+        //--> DIV2
+        //--> DIV4
+    </script>
+</body>
+</html>

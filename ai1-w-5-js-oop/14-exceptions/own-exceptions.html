@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Own Exceptions</title>
+
+    <script>
+        class LessThanHalfError extends Error {}
+        class MoreThanHalfError extends Error {}
+
+        function testException() {
+            let rand = Math.random();
+            if (rand < 0.5) {
+                throw new LessThanHalfError(`Value: ${rand}`);
+            } else if (rand < 1) {
+                throw new MoreThanHalfError(`Value: ${rand}`);
+            } else {
+                return rand;
+            }
+        }
+
+
+        try {
+            let value = testException();
+            console.log(value);
+        } catch (error) {
+            if (error instanceof LessThanHalfError) {
+                console.log("Error - less than half.");
+            } else if (error instanceof  MoreThanHalfError) {
+                console.log("Error - more than half.");
+            } else {
+                console.log("Some other error.");
+            }
+        }
+
+        //--> Error - less than half.
+        //--> Error - less than half.
+        //--> Error - more than half.
+    </script>
+
+</head>
+<body>
+</body>
+</html>
