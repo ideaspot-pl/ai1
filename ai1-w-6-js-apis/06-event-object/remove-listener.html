@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Removing Listener</title>
+</head>
+<body>
+    <p>Click here and see what happens!</p>
+    <button onclick="addListener()">Add listener</button>
+    <button onclick="removeListener()">Remove listener</button>
+
+    <script>
+        let observed = document.querySelector("p");
+
+        function listenerCallback() {
+            alert("Hey!");
+        }
+
+        function addListener() {
+            observed.addEventListener("click", listenerCallback);
+        }
+
+        function removeListener() {
+            observed.removeEventListener("click", listenerCallback);
+        }
+    </script>
+</body>
+</html>

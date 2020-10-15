@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Object</title>
+</head>
+<body>
+    <p>Click here and see what happens!</p>
+    <script>
+        let observed = document.querySelector("p");
+        observed.addEventListener("click", function(event) {
+            event.preventDefault();
+            console.log(event);
+            //--> MouseEvent {screenX: 1668, screenY: -387,...}
+        });
+    </script>
+</body>
+</html>

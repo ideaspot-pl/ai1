@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Many Listeners</title>
+</head>
+<body>
+    <p>Click here and see what happens!</p>
+    <script>
+        let paragraph = document.querySelector("p");
+
+        paragraph.addEventListener('click', function() {
+            alert('First listener reacted!');
+        })
+        paragraph.addEventListener('click', function() {
+            alert('Second listener reacted!');
+        })
+    </script>
+</body>
+</html>

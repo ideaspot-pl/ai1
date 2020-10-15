@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Object</title>
+
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            border: 3px dotted #7f7fe9;
+            background-color: #ccccf6;
+            position: relative;
+        }
+
+        #point {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #ee15af;
+            position: absolute;
+            transition-property: left, top;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="point" style="left: 145px; top: 145px;"></div>
+    </div>
+
+    <script>
+        let point = document.getElementById("point");
+        let container = document.getElementById("container");
+
+        container.addEventListener("click", (event) => {
+            // console.log(event);
+            point.style.left = (event.offsetX - 5) + 'px';
+            point.style.top = (event.offsetY - 5) + 'px';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute: onclick</title>
+</head>
+<body>
+    <p onclick="alert('Clicked!')">Click here and see what happens!</p>
+    <p id="other">Click here too!</p>
+    <script>
+        let other = document.getElementById("other");
+        other.onclick = function () {
+            alert("Other clicked!");
+        }
+    </script>
+</body>
+</html>

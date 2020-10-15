@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Context</title>
+</head>
+<body>
+    <p id="first">Click here for event 1</p>
+    <p id="second">Click here for event 2</p>
+    <p id="third">Click here but nothing will happen!</p>
+    <script>
+        let p1 = document.getElementById("first");
+        let p2 = document.getElementById("second");
+
+        p1.addEventListener('click', function() {
+            alert('Clicked 1!');
+        })
+        p2.addEventListener('click', function() {
+            alert('Clicked 2!');
+        })
+    </script>
+</body>
+</html>

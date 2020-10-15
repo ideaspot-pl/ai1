@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Target</title>
+</head>
+<body>
+    <div id="container">
+        This div has an event listener.
+
+        <button id="first">Button 1</button>
+        <button id="second">Button 2</button>
+    </div>
+    <script>
+        "use strict";
+        let container = document.getElementById("container");
+
+        container.addEventListener("click", function(event) {
+            if (event.target.id === "first") {
+                console.log("Button 1 clicked");
+            } else if (event.target.id === "second") {
+                console.log("Button 2 clicked");
+            } else {
+                console.log("Container clicked");
+            }
+        });
+    </script>
+</body>
+</html>

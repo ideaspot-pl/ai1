@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Propagation</title>
+</head>
+<body>
+    <div id="container">
+        This div has an event listener.
+
+        <button id="withPropagation">Button with Propagation</button>
+        <button id="withoutPropagation">Button without Propagation</button>
+    </div>
+    <script>
+        let container = document.getElementById("container");
+        let withPropagation = document.getElementById("withPropagation");
+        let withoutPropagation = document.getElementById("withoutPropagation");
+
+        container.addEventListener("click", function(event) {
+            console.log("Container clicked");
+        });
+        withPropagation.addEventListener("click", function (event) {
+            console.log("Button with propagation clicked");
+        });
+        withoutPropagation.addEventListener("click", function (event) {
+            console.log("Button without propagation clicked");
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>

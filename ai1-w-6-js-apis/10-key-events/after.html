@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Events</title>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #ebc66f; /* orange yelow crayola #ebc66f */
+            transition-property: background-color;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        "use strict";
+        let container = document.getElementById("container");
+
+        window.addEventListener("keyup", function (event) {
+            switch (event.key.toLowerCase()) {
+                case 'r':
+                    container.style.backgroundColor = '#ff7070'; //light coral #ff7070 (red!)
+                    break;
+                case 'g':
+                    container.style.backgroundColor = '#adffad'; //mint green #adffad (green!)
+                    break;
+                case 'b':
+                    container.style.backgroundColor = '#8585ff'; // medium slate blue #8585ff (blue!)
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
