@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest: Synchronous</title>
+
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "./data.txt", false);
+        req.send(null);
+        // ...wait...
+
+        console.log(req.responseText);
+        //--> Topping candy jelly-o chocolate...
+        console.log(req.status);
+        //--> 200
+        console.log(req.statusText);
+        //--> OK
+        console.log(req.getResponseHeader('content-type'))
+        //--> text/plain
+    </script>
+</head>
+<body>
+</body>
+</html>

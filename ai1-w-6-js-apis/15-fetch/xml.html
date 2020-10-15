@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch: XML</title>
+
+    <script>
+        fetch('./data.xml')
+            .then((response) => {
+                return response.text();
+            })
+            .then((data) => {
+                let parser = new DOMParser();
+                let xmlDoc = parser.parseFromString(data, "text/xml");
+                let cookies = xmlDoc.querySelectorAll("cookie");
+                for (let cookie of cookies) {
+                    console.log(cookie.childNodes[0].textContent);
+                }
+                //--> candy
+                //--> jelly-o
+                //--> chocolate
+                //--> ...
+            })
+        ;
+    </script>
+</head>
+<body>
+</body>
+</html>

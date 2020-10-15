@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+
+    <script>
+        "use strict";
+
+        const promise = new Promise( (resolve, reject) => {
+            setTimeout(() => {
+                resolve('After 2 seconds')
+            }, 2000);
+        });
+
+        promise.then((value) => {
+            console.log(value);
+            // (2, two seconds later) --> After 2 seconds
+        });
+
+        console.log(promise);
+        // (1) --> [object Promise]
+    </script>
+
+</head>
+<body>
+</body>
+</html>

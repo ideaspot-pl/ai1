@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises Reject</title>
+
+    <script>
+        "use strict";
+
+        const promise = new Promise( (resolve, reject) => {
+            setTimeout(() => {
+                reject('Failed after 2 seconds')
+            }, 2000);
+        });
+
+        promise.then((value) => {
+            console.log(value);
+            // won't get there
+        });
+
+        promise.catch((reason) => {
+            console.log(reason);
+            //--> Failed after 2 seconds
+
+            return "returned from catch"
+        });
+
+        console.log(promise);
+        //--> [object Promise]
+    </script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch from API</title>
+</head>
+<body>
+    <ul id="commits-list">
+    </ul>
+    <button id="get-commits-button" onclick="getCommits()">Get commits!</button>
+
+    <script>
+        let getCommitsButton = document.getElementById('get-commits-button');
+        let commitsList = document.getElementById('commits-list');
+
+        function getCommits() {
+            getCommitsButton.disabled = true;
+            fetch('https://api.github.com/repos/ideaspotPL/ai1/commits')
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    for (let commitInfo of data) {
+                        let newLi = document.createElement('li');
+                        newLi.innerText = `${commitInfo.commit.author.name}: ${commitInfo.commit.message}`;
+                        commitsList.appendChild(newLi);
+                    }
+                })
+            ;
+        }
+    </script>
+</body>
+</html>

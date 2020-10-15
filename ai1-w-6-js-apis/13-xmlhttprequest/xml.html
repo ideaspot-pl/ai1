@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest: Asynchronous XML</title>
+
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "./data.xml", true);
+
+        req.addEventListener("load", function(event) {
+            let cookies = req.responseXML.querySelectorAll("cookie");
+            for (let cookie of cookies) {
+                console.log(cookie.childNodes[0].textContent);
+            }
+            //--> candy
+            //--> jelly-o
+            //--> chocolate
+            //--> ...
+        });
+        req.send(null);
+    </script>
+</head>
+<body>
+</body>
+</html>

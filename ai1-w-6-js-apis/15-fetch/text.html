@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch: Text</title>
+
+    <script>
+        fetch('./data.txt')
+            .then((response) => {
+                console.log(response);
+                //--> [object Response]
+                console.log(response.body);
+                //--> [object ReadableStream]
+
+                return response.text();
+            })
+            .then((data) => {
+                console.log(data);
+                //--> Topping candy jelly-o ...
+            })
+        ;
+    </script>
+</head>
+<body>
+</body>
+</html>

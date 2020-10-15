@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest: Asynchronous</title>
+
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "./data.txt", true);
+
+        req.addEventListener("load", function(event) {
+            console.log(event);
+            // (2) --> ProgressEvent {loaded: 151, total: 151, type: "load",...}
+
+            // we use req!
+            console.log(req.responseText);
+            // (3) --> Topping candy jelly-o chocolate...
+            console.log(req.status);
+            // (4) --> 200
+            console.log(req.statusText);
+            // (5) --> OK
+            console.log(req.getResponseHeader('content-type'))
+            // (6) --> text/plain
+        });
+
+        req.send(null);
+        console.log("The show goes on!");
+        // (1) --> The show goes on!
+    </script>
+</head>
+<body>
+</body>
+</html>

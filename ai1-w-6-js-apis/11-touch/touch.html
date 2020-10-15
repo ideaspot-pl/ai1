@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch Events</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 99vh;
+            margin: 0;
+            padding: 0;
+            background-color: #81f1d0; /* orange yelow crayola #ebc66f */
+            position: relative;
+        }
+
+        .dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            border: 10px solid #ff7070;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        "use strict";
+        let container = document.getElementById("container");
+
+        function updateDots(event) {
+            let existingDots = document.querySelectorAll(".dot");
+            for (let dot of existingDots) {
+                container.removeChild(dot);
+            }
+
+            for (let touch of event.touches) {
+                let newDot = document.createElement("div");
+                newDot.className = "dot";
+                newDot.style.left = (touch.clientX) - 25 + 'px';
+                newDot.style.top = (touch.clientY) - 25 + 'px';
+                container.appendChild(newDot);
+            }
+        }
+
+        container.addEventListener("touchstart", updateDots);
+        container.addEventListener("touchmove", updateDots);
+        container.addEventListener("touchend", updateDots);
+    </script>
+</body>
+</html>
