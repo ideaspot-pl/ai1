@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher Order Functions: Unless</title>
+    <script>
+        function unless(condition, action) {
+            if (! condition) {
+                action();
+            }
+        }
+
+        for (let i = 0; i < 5; i++) {
+            unless(i % 2, () => {
+                console.log(`Printing ${i}...`);
+            })
+        }
+    </script>
+
+</head>
+<body>
+</body>
+</html>
