@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG: Viewbox</title>
+    <style>
+        svg {
+            border: 1px solid #000000;
+            transition-property: width;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <svg x="0px" y="0px" width="300px" height="150px" viewBox="0 0 300 150">
+        <rect x="30" y="30" fill="#76AEE2" stroke="#44657E" width="90" height="90" />
+        <rect x="180" y="30" fill="#C3339B" stroke="#6D1D57" width="90" height="90" />
+    </svg>
+    <br>
+    <label>
+        SVG Width
+        <input id="svgRange" type="number" min="100" max="450" step="50" value="300">
+    </label>
+    <br>
+    <label>
+        ViewBox Width
+        <input id="viewBoxRange" type="number" min="100" max="450" step="50" value="300">
+    </label>
+    <script>
+        let svgRange = document.getElementById("svgRange");
+        let viewBoxRange = document.getElementById("viewBoxRange");
+        let svg = document.querySelector("svg");
+
+        svgRange.addEventListener("input", function (event) {
+            svg.setAttribute("width", svgRange.value);
+        });
+        viewBoxRange.addEventListener("input", function (event) {
+            svg.setAttribute("viewBox", "0 0 " + viewBoxRange.value + " 150");
+        });
+    </script>
+</body>
+</html>

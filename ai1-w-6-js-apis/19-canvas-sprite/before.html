@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas: Animated Sprite</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="player" width="192" height="256"></canvas>
+    <script>
+        class Robot {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.context = canvas.getContext("2d");
+                this.isWalking = false;
+                this.interval = null;
+
+                this.sprite = document.createElement("img");
+                this.sprite.src = "robot-sprite.png";
+                this.sprite.addEventListener("load", () => {
+                    // ...
+                });
+            }
+
+            // selects coordinates in the sprite and draws a single frame 192x256 at position 0, 1, ...
+            drawFrame(frameNumber) {
+                // ...
+            }
+
+            // stop the interval and draw idle frame 0
+            stop() {
+                // ...
+            }
+
+            // start the interval, rotating frames 1-8
+            walk() {
+                // ...
+            }
+
+            // check if the ' ' is pressed; switch isWalking to true/false
+            keyupHandler(event) {
+                // ...
+            }
+        }
+
+        let canvas = document.getElementById("player");
+        let robot = new Robot(canvas);
+        robot.stop();
+        window.addEventListener('keyup', function (event) {
+            robot.keyupHandler(event)
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG: Shapes</title>
+    <style>
+        #canvas {
+            border: 1px solid #000000;
+            width: 300px;
+            height: 300px;
+            display: block;
+        }
+
+        g#shapes {
+            fill: #77e7da;
+            stroke: #23945f;
+            stroke-width: 3;
+        }
+
+        #canvas rect, #canvas circle, #canvas ellipse, #canvas.line {
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <svg id="canvas" viewBox="0 0 300 300">
+        <g id="shapes">
+            <rect x="20" y="20" width="100" height="100"/>
+            <circle cx="225" cy="75" r="50"/>
+            <ellipse cx="150" cy="200" rx="125" ry="50"/>
+            <line x1="20" y1="275" x2="280" y2="275" />
+        </g>
+    </svg>
+
+    <select id="selector">
+        <option value="rect">rect</option>
+        <option value="circle">circle</option>
+        <option value="ellipse">ellipse</option>
+        <option value="line">line</option>
+    </select>
+    Stroke <input id="strokePicker" type="color" oninput="updateStyle()">
+    Fill <input id="fillPicker" type="color" oninput="updateStyle()">
+    Width <input id="widthPicker" type="number" min="0" max="10" step="1" oninput="updateStyle()">
+
+    <script>
+        function updateStyle() {
+            let selector = document.getElementById("selector");
+            let strokePicker = document.getElementById("strokePicker");
+            let fillPicker = document.getElementById("fillPicker");
+            let widthPicker = document.getElementById("widthPicker");
+
+            let selected = document.querySelector(selector.value);
+            selected.style.stroke = strokePicker.value;
+            selected.style.fill = fillPicker.value;
+            selected.style.strokeWidth = widthPicker.value;
+        }
+    </script>
+</body>
+</html>

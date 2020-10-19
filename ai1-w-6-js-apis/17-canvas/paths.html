@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas: Paths</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="300" height="300"></canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+
+        context.strokeStyle = "#000000";
+        context.lineWidth = 10;
+        context.beginPath();
+        for (let y of [30, 90, 150, 210, 270]) {
+            context.moveTo(10, y);
+            context.lineTo(140, y);
+        }
+        context.stroke();
+
+        let colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#9400D3"];
+        for (let [i, color] of colors.entries()) {
+            let verticalDistance = 300 / colors.length;
+            let offset = verticalDistance / 2;
+            let y = i * verticalDistance + offset;
+
+            context.strokeStyle = color;
+            context.beginPath();
+            context.moveTo(160, y);
+            context.lineTo(290, y);
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

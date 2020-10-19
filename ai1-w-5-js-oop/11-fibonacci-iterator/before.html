@@ -24,10 +24,15 @@
         class FibonacciIterator {
             constructor(sequence) {
                 this.sequence = sequence;
-                // ...
+                this.ordinal = 0;
             }
 
             next() {
+                if (this.ordinal === this.sequence.numElements - 1) {
+                    return {value: undefined, done: true}
+                }
+                this.ordinal++;
+                return {value: this.sequence.fib(this.ordinal), done: false}
                 // ...
                 // return {value: ..., done: ...}
             }

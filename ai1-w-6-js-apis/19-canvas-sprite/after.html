@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas: Animated Sprite</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="player" width="192" height="256"></canvas>
+    <script>
+        class Robot {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.context = canvas.getContext("2d");
+                this.isWalking = false;
+                this.interval = null;
+
+                this.sprite = document.createElement("img");
+                this.sprite.src = "robot-sprite.png";
+                this.sprite.addEventListener("load", () => {
+                    this.stop();
+                });
+            }
+            drawFrame(frameNumber) {
+                let offset = 192 * frameNumber;
+                this.context.drawImage(this.sprite, offset, 0, 192, 256, 0, 0, 192, 256);
+            }
+            stop() {
+                clearInterval(this.interval);
+                this.drawFrame(0);
+            }
+            walk() {
+                let frame = 0;
+                this.interval = setInterval(() => {
+                    frame = (frame < 8) ? (frame + 1) : 1; // frames 1 to 8
+                    this.drawFrame(frame);
+                }, 125);
+            }
+            keyupHandler(event) {
+                if (event.key === ' ') {
+                    this.isWalking = ! this.isWalking;
+                    if (this.isWalking) {
+                        this.walk();
+                    } else {
+                        this.stop();
+                    }
+                }
+            }
+        }
+
+        let canvas = document.getElementById("player");
+        let robot = new Robot(canvas);
+        robot.stop();
+        window.addEventListener('keyup', function (event) {
+            robot.keyupHandler(event)
+        });
+
+    </script>
+</body>
+</html>

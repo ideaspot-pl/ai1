@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag-and-drop</title>
+    <style>
+        div.item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        div.draggable {
+            background-color: #7f7fe9;
+        }
+        div.non-draggable {
+            background-color: #ee15af;
+        }
+
+        div.drag-target {
+            width: 300px;
+            height: 150px;
+            border: 2px dashed #7f7fe9;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    Target 1
+    <div class="drag-target"></div>
+
+    Target 2
+    <div class="drag-target"></div>
+
+    <div id="non-draggable-item" class="item non-draggable" draggable="false"></div>
+    <div id="draggable-item-1" class="item draggable" draggable="true"></div>
+    <div id="draggable-item-2" class="item draggable" draggable="true"></div>
+
+
+    <script>
+        let items = document.querySelectorAll('.item');
+        for (let item of items) {
+            item.addEventListener("dragstart", function(event) {
+                this.style.border = "5px dashed #D8D8FF";
+                event.dataTransfer.setData("text", this.id);
+            });
+
+            item.addEventListener("dragend", function(event) {
+                this.style.borderWidth = "0";
+            });
+        }
+
+        let targets = document.querySelectorAll(".drag-target");
+        for (let target of targets) {
+            target.addEventListener("dragenter", function (event) {
+                this.style.border = "2px solid #7FE9D9";
+            });
+            target.addEventListener("dragleave", function (event) {
+                this.style.border = "2px dashed #7f7fe9";
+            });
+            target.addEventListener("dragover", function (event) {
+                event.preventDefault();
+            });
+            target.addEventListener("drop", function (event) {
+                let myElement = document.querySelector("#" + event.dataTransfer.getData('text'));
+                this.appendChild(myElement)
+                this.style.border = "2px dashed #7f7fe9";
+            }, false);
+        }
+    </script>
+</body>
+</html>

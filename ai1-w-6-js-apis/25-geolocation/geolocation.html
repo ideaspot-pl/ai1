@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation</title>
+</head>
+<body>
+    <button id="getLocation" onclick="getLocation()">Get Location</button>
+    <div id="positionInfo">
+        <strong>Latitude:</strong> <span id="latitude"></span><br>
+        <strong>Longitude:</strong> <span id="longitude"></span><br>
+    </div>
+
+    <script>
+        function getLocation() {
+            if (! navigator.geolocation) {
+                alert("Sorry, no geolocation available for you!");
+            }
+
+            navigator.geolocation.getCurrentPosition((position) => {
+                document.getElementById("latitude").innerText = position.coords.latitude;
+                document.getElementById("longitude").innerText = position.coords.longitude;
+            }, (positionError) => {
+                console.error(positionError);
+            }, {
+                enableHighAccuracy: false
+            });
+        }
+    </script>
+</body>
+</html>

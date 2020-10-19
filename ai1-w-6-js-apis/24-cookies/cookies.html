@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+</head>
+<body>
+    <input id="addName" placeholder="name" type="text">
+    <input id="addValue" placeholder="value" type="text">
+    <button id="addCookie" onclick="addCookie()">add cookie</button>
+
+    <br>
+
+    <input id="getName" placeholder="name" type="text">
+    <button id="getCookie" onclick="getCookie()">get cookie</button>
+
+    <br>
+
+    <input id="deleteName" placeholder="name" type="text">
+    <button id="deleteCookie" onclick="deleteCookie()">delete cookie</button>
+
+    <br>
+
+    <button id="getAllCookies" onclick="getAllCookies()">get all cookies</button>
+
+
+    <script>
+        function getAllCookies() {
+            console.log(document.cookie);
+        }
+
+        function addCookie() {
+            let name = document.querySelector("#addName").value;
+            let value = document.querySelector("#addValue").value;
+
+            let expires = new Date(Date.now() + (3600 * 1000) ); // 1 hour
+            expires = expires.toUTCString();
+
+            document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; expires=${expires}`;
+        }
+
+        function deleteCookie() {
+            let name = document.querySelector("#deleteName").value;
+
+            let expires = new Date(Date.now()); // now, so expires
+            expires = expires.toUTCString();
+
+            document.cookie = `${encodeURIComponent(name)}=0; expires=${expires}`;
+        }
+
+        function getCookie() {
+            let name = document.querySelector("#getName").value;
+            let cookies = document.cookie;
+            cookies = cookies.split(/;\s*/);
+            for (let cookie of cookies) {
+                let [cookieName, cookieValue] = cookie.split("=");
+                if (cookieName === name) {
+                    console.log(cookieValue);
+                    return;
+                }
+            }
+
+            console.log('nope...')
+        }
+
+    </script>
+</body>
+</html>

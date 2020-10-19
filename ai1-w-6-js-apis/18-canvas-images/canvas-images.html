@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas: Images</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <p>Size 1:1</p>
+    <canvas id="fullSizeCanvas" width="1728" height="256"></canvas>
+
+    <p>Scale 1:4</p>
+    <canvas id="scaledCanvas" width="432" height="64"></canvas>
+
+    <p>Single Image</p>
+    <canvas id="singleCanvas" width="192" height="256"></canvas>
+    <button onclick="clearCanvas()">Clear</button>
+    <script>
+        let fullSizeCanvas = document.getElementById("fullSizeCanvas");
+        let fullSizeContext = fullSizeCanvas.getContext("2d");
+
+        let scaledCanvas = document.getElementById("scaledCanvas");
+        let scaledContext = scaledCanvas.getContext("2d");
+
+        let singleCanvas = document.getElementById("singleCanvas");
+        let singleContext = singleCanvas.getContext("2d");
+
+        let sprite = document.createElement("img");
+        sprite.src = "robot-sprite.png";
+        sprite.addEventListener("load", function() {
+            fullSizeContext.drawImage(sprite, 0, 0)
+
+            // copy all from the other canvas, scaled
+            scaledContext.drawImage(fullSizeCanvas, 0, 0, 432, 64);
+
+            // copy part from the other canvas
+            singleContext.drawImage(fullSizeCanvas, 0, 0, 192, 256, 0, 0, 192, 256);
+        });
+
+        function clearCanvas() {
+            singleContext.clearRect(0, 0, singleCanvas.width, singleCanvas.height);
+        }
+
+    </script>
+</body>
+</html>

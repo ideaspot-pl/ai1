@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas: Stroke and Fill Style</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="300" height="300"></canvas>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+        context.fillRect(25, 25, 100, 100);
+        context.strokeRect(175, 25, 100, 100);
+
+        context.fillStyle = "#93a3f8";
+        context.strokeStyle = "#fd9696";
+        context.fillRect(25, 175, 100, 100);
+        context.strokeRect(175, 175, 100, 100);
+    </script>
+</body>
+</html>

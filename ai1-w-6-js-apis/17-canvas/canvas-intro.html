@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Intro</title>
+    <style>
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <p>Above</p>
+    <canvas width="300" height="300"></canvas>
+    <p>Below</p>
+
+    <script>
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+        context.fillStyle = "#9f83e7";
+        context.fillRect(50, 50, 200, 200);
+    </script>
+</body>
+</html>

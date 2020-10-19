@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG: Animation</title>
+    <style>
+        #canvas {
+            border: 1px solid #000000;
+            width: 300px;
+            height: 150px;
+        }
+
+        #half {
+            stroke-width: 3px;
+            stroke: #000000;
+        }
+
+        #ball {
+            stroke: #ff0000;
+            fill: #ff9a9a;
+            stroke-width: 3;
+
+            animation-name: moving-ball;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes moving-ball {
+            0% {
+                transform: translate(0,0);
+            }
+            50% {
+                transform: translate(100px, 50px);
+            }
+            100% {
+                transform: translate(200px, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg id="canvas" viewBox="0 0 300 150">
+        <g id="shapes">
+            <line id="half" x1="150" x2="150" y1="0" y2="150" />
+            <circle id="ball" cx="50" cy="75" r="15" />
+        </g>
+    </svg>
+
+</body>
+</html>

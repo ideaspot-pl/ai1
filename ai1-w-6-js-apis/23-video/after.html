@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <style>
+        video {
+            width: 960px;
+            height: 540px;
+        }
+
+        #player {
+            position: relative;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 5px;
+            width: 100%;
+        }
+
+        .btn {
+            background-color: #FFFFFF00;
+            color: white;
+            border: 1px solid white;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        .btn:hover {
+            background-color: #FFFFFFAA;
+        }
+
+        progress {
+            width: 950px;
+            height: 10px;
+            position: absolute;
+            left: 0;
+            bottom: -13px;
+            border-radius: 0;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div id="player">
+        <video src="scifidoor.mp4" poster="poster.png"></video>
+        <div class="buttons">
+            <button class="btn play" onclick="playPause()">play/pause</button>
+            <button class="btn stop" onclick="stop()">stop</button>
+            <button class="btn skip-back" onclick="skipBack()">&lt;&lt;</button>
+            <button class="btn skip-ahead" onclick="skipAhead()">&gt;&gt;</button>
+            <button class="btn volume-up" onclick="volumeUp()">V+</button>
+            <button class="btn volume-down" onclick="volumeDown()">V-</button>
+            <progress value="0" max="100"></progress>
+        </div>
+    </div>
+
+
+    <script>
+        let video = document.querySelector("video");
+
+        function playPause() {
+            if (video.currentTime === 0) {
+                video.src = 'scifidoor.mp4';
+            }
+            if (video.paused === true) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function stop() {
+            video.src = '';
+        }
+
+        function skipAhead() {
+            video.currentTime += 5;
+        }
+
+        function skipBack() {
+            video.currentTime -= 5;
+        }
+
+        function volumeUp() {
+            if (video.volume < 1) {
+                video.volume += 0.1;
+            }
+        }
+
+        function volumeDown() {
+            if (video.volume > 0) {
+                video.volume -= 0.1;
+            }
+        }
+
+        video.addEventListener("loadeddata", function() {
+            let progress = document.querySelector("progress");
+            progress.max = video.duration;
+        });
+
+        setInterval(function() {
+            if (! video.paused) {
+                let progress = document.querySelector("progress");
+                progress.value = video.currentTime;
+            }
+        }, 500);
+    </script>
+</body>
+</html>
