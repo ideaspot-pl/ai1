@@ -1,0 +1,3 @@
+curl --location --request POST 'http://ai1.local/ai1-w-6-php-advanced/18-postman-challenge/post-after.php' \
+--form 'a=a' \
+--form 'b=b'

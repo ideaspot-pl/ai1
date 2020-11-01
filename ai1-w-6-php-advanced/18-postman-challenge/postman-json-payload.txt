@@ -1,0 +1,6 @@
+curl --location --request POST 'http://ai1.local/ai1-w-6-php-advanced/18-postman-challenge/json-payload-after.php' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "a": "a",
+    "b": "bcd"
+}'

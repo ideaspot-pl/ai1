@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+body {
+    background-color: #1d1d1d;
+    font-family: "Grandstander", sans-serif;
+}
+#container {
+    width: 400px;
+    margin: 0 auto;
+}
+article {
+    margin-top: 10px;
+    background-color: #000000;
+    color: #aeaeae;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: justify;
+}
+form {
+    background-color: #000000;
+    color: #aeaeae;
+    padding: 20px;
+    width: 100%;
+}
+textarea, input {
+    width: 100%;
+    border-radius: 4px;
+}
+input {
+    height: 25px;
+}
+textarea {
+    height: 100px;
+}
+mark {
+    color: #e7e7e7;
+    background-color: #ffffff66;
+}

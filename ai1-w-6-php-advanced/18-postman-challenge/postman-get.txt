@@ -1,0 +1,1 @@
+curl --location --request GET 'http://ai1.local/ai1-w-6-php-advanced/18-postman-challenge/get-after.php?filter=abc&limit=10&page=2'
