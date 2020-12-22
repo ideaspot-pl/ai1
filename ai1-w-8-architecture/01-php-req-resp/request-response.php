@@ -2,19 +2,24 @@
 
 // get request info
 $uri = $_SERVER["REQUEST_URI"];
-$q = $_GET['q'];
+$q = isset($_GET['q']) ? $_GET['q'] : null;
 
 // process
 $data = ['apple', 'banana', 'pear', 'lime', 'orange', 'lemon'];
 $found = null;
-foreach ($data as $item) {
-    if (strstr($item, $q) !== false) {
-        $found = $item;
-        break;
+if ($q) {
+    foreach ($data as $item) {
+        if (strstr($item, $q) !== false) {
+            $found = $item;
+            break;
+        }
     }
-}
-if (! $found) {
-    $found = "Not found";
+
+    if (!$found) {
+        $found = "Not found";
+    }
+} else {
+    $found = "No search query";
 }
 
 
