@@ -18,10 +18,10 @@ $type = $argv[2];
 
 switch ($factoryId) {
     case 1:
-        $duck = AbstractAnimalDuck::createDuck($type);
+        $duck = AnimalDuckFactory::createDuck($type);
         break;
     case 2:
-        $duck = AbstractToyDuck::createDuck($type);
+        $duck = ToyDuckFactory::createDuck($type);
         break;
     default:
         die("Invalid factory.");

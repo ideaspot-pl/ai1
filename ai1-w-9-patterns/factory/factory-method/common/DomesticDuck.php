@@ -1,6 +1,6 @@
 <?php
 
-class DomesticDuck extends AbstractAnimalDuck
+class DomesticDuck extends AbstractDuck
 {
     public function display()
     {

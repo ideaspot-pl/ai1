@@ -1,6 +1,6 @@
 <?php
 
-class RubberDuck extends AbstractToyDuck
+class RubberDuck extends AbstractDuck
 {
     public function display()
     {

@@ -1,6 +1,6 @@
 <?php
 
-class MallardDuck extends AbstractAnimalDuck
+class MallardDuck extends AbstractDuck
 {
     public function display()
     {

@@ -1,6 +1,6 @@
 <?php
 
-abstract class AbstractToyDuck extends AbstractDuck
+abstract class ToyDuckFactory extends AbstractDuckFactory
 {
     public static function createDuck($type)
     {
