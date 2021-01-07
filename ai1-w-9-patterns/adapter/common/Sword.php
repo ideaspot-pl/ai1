@@ -1,5 +1,5 @@
 <?php
-class Sword implements CutableInterface
+class Sword implements CuttableInterface
 {
     public function cut()
     {

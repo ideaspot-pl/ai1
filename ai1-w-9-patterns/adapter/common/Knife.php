@@ -1,5 +1,5 @@
 <?php
-class Knife implements CutableInterface
+class Knife implements CuttableInterface
 {
     public function cut()
     {

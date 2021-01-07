@@ -1,5 +1,5 @@
 <?php
-interface CutableInterface
+interface CuttableInterface
 {
     public function cut();
 }

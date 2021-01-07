@@ -11,7 +11,7 @@ $weapons[] = new Sword();
 foreach ($weapons as $weapon) {
     if ($weapon instanceof ThrowableInterface) {
         $weapon->doThrow();
-    } elseif ($weapon instanceof  CutableInterface) {
+    } elseif ($weapon instanceof  CuttableInterface) {
         $weapon->cut();
     } elseif ($weapon instanceof ShootableInterface) {
         $weapon->shoot();
