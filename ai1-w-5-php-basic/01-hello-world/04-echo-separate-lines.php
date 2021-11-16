@@ -1,7 +1,7 @@
 <?php
 
 $title = "Welcome to PHP!";
-$date = date('Y-m-d');
+$date = date('Y-m-d H:i:s');
 
 echo "<!DOCTYPE html>\n";
 echo "<html lang='en'>\n";
