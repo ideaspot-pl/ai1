@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('127.0.0.1', 'homestead', 'secret', 'lusers');
+$conn = mysqli_connect('127.0.0.1', 'homestead', 'secret', 'ai');
 $sql = "SELECT * FROM user";
 $result = mysqli_query($conn, $sql);
 if (! $result) {
