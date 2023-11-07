@@ -1,4 +1,4 @@
-function polymorphism6() {
+function polymorphism7() {
     type Filter = {
         <MyGenericType> (array: MyGenericType[], f: (element: MyGenericType) => boolean) : MyGenericType[]
     };
