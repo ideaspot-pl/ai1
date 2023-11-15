@@ -1,5 +1,5 @@
 <?php
 $config = [];
-$config['dsn'] = 'mysql:dbname=ai; host=127.0.0.1';
+$config['dsn'] = "sqlite:" . __DIR__."/../data.db";
 $config['username'] = 'homestead';
 $config['password'] = 'secret';
