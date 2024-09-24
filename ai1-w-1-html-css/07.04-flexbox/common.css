@@ -1,0 +1,14 @@
+.container {
+    padding: 10px;
+    background-color: #39b09a;
+    display: flex;
+}
+
+.item {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 22px;
+}

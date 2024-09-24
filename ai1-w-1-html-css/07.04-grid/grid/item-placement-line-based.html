@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item - grid-column, grid-row</title>
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        .container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 3fr 9fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 95vh;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item" style="">1</div>
+    <div class="item" style="">2</div>
+    <div class="item" style="">3</div>
+    <div class="item" style="">4</div>
+</div>
+
+<!--<div class="container">-->
+<!--    <div class="item" style="grid-column-start: 1; grid-column-end: 3;">1</div>-->
+<!--    <div class="item" style="grid-column: 1 / 2;">2</div>-->
+<!--    <div class="item" style="grid-column: 2 / 3; grid-row: 2 / 3">3</div>-->
+<!--    <div class="item" style="grid-column: span 2;">4</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--    <div class="item" style="grid-column: span 2;">1</div>-->
+<!--    <div class="item" style="">2</div>-->
+<!--    <div class="item" style="">3</div>-->
+<!--    <div class="item" style="grid-column: span 2;">4</div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--    <div class="item" style="grid-area: 1 / 1 / 2 / 3">1</div>-->
+<!--    <div class="item" style="">2</div>-->
+<!--    <div class="item" style="">3</div>-->
+<!--    <div class="item" style="grid-area: 3 / 1 / 4 / 3">4</div>-->
+<!--</div>-->
+</body>
+</html>

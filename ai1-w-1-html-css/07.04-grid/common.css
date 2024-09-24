@@ -1,0 +1,13 @@
+.container {
+    background-color: #39b09a;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.item {
+    background-color: white;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 22px;
+    padding: 5px;
+}

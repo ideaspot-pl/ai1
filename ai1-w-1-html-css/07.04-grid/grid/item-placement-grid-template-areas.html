@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item - grid-template-areas</title>
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        .container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 3fr 9fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 95vh;
+
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer"
+                /*"sidebar footer"*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="item" style="grid-area: header;">1</div>
+    <div class="item" style="grid-area: sidebar;">2</div>
+    <div class="item" style="grid-area: content;">3</div>
+    <div class="item" style="grid-area: footer;">4</div>
+</div>
+</body>
+</html>
