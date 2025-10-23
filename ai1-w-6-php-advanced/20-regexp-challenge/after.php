@@ -6,7 +6,7 @@ function highlight($html, $phrase)
         return $html;
     }
 
-    $pattern = "/(${phrase})/i";
+    $pattern = "/({$phrase})/i";
     $highlightedHtml = preg_replace($pattern, '<mark>$1</mark>', $html);
 
     return $highlightedHtml;
