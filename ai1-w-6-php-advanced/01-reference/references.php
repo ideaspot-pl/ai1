@@ -1,18 +1,18 @@
 <?php
 
-$myVariable = 'abc';
-$myArray = array(
-    'Jon',
-    'Arya',
-    'Eddard',
-);
+$myVariable = 'original value';
+$myArray = [
+    'Geralt',
+    'Ciri',
+    'Jaskier',
+];
 
 $variableRef = &$myVariable;
 $arrayRef = &$myArray;
-$arrayElementRef = &$myArray[0];
+$arrayElementRef = &$myArray[2];
 
-$variableRef = 'def';
-$arrayElementRef = 'Daenerys';
+$variableRef = 'updated value';
+$arrayElementRef = 'Zoltan';
 
 var_dump($myVariable);
 var_dump($myArray);

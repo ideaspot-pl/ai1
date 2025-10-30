@@ -1,6 +1,6 @@
 <?php
 
-function memoryPlusMemoryRead($value)
+function memoryPlusMemoryRead(int $value)
 {
     static $sum = 0;
     $sum += $value;
@@ -9,7 +9,7 @@ function memoryPlusMemoryRead($value)
 
 memoryPlusMemoryRead(5);
 // int 5
-memoryPlusMemoryRead(10);
+memoryPlusMemoryRead(5);
+// int 10
+memoryPlusMemoryRead(5);
 // int 15
-memoryPlusMemoryRead(15);
-// int 30
