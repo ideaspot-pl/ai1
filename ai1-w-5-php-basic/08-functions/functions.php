@@ -5,6 +5,6 @@ function sayHello($name)
     echo "Hello $name!<br/>";
 }
 
-foreach (array('Jon', 'Arya', 'Eddard') as $characterName) {
+foreach (['Alice', 'Bob', 'Carol'] as $characterName) {
     sayHello($characterName);
 }
