@@ -5,11 +5,11 @@ $xml = <<<EOT
 <users>
     <user>
         <id>1</id>
-        <name>Jon</name>
+        <name>Alice</name>
     </user>
     <user>
         <id>2</id>
-        <name>Arya</name>
+        <name>Bob</name>
     </user>
 </users>
 EOT;
